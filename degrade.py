@@ -63,5 +63,5 @@ def create_mixed_dataset(input_dir, suffix='full'):
 
 if __name__ == '__main__':
     suffix = 'degradation_type' # [down/16x/noise/blur/jpeg/full]
-    source_dir = '/path/to/your/source/directory'
+    source_dir = '/content/datasets/dataset_stylegan_512'
     create_mixed_dataset(source_dir, suffix)
