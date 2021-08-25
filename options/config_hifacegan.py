@@ -1,15 +1,15 @@
 import sys
 
 class TrainOptions(object):
-    dataroot = '<your dataset folder, [LQ;HQ]>'
+    dataroot = '/content/datasets/dataset_stylegan_512_down'
     dataroot_assist = ''
-    name = '<your experiment name>'
+    name = 'HiFaceGan_Down'
     crop_size = 512
 
     gpu_ids = [0]  # set to [] for CPU-only training (not tested)
     gan_mode = 'ls'
 
-    continue_train = False
+    continue_train = True
     which_epoch = 'latest'
 
     D_steps_per_G = 1
@@ -30,7 +30,7 @@ class TrainOptions(object):
     display_winsize = 256
     print_freq = 100
     save_epoch_freq = 1
-    save_latest_freq = 5000
+    save_latest_freq = 3000
 
     init_type = 'xavier'
     init_variance = 0.02
@@ -90,7 +90,7 @@ class TrainOptions(object):
 
 
 class TestOptions(object):
-    name = '<must be the same as TrainOptions.name>'
+    name = 'HiFaceGan_Down'
     results_dir = './results/'
     gpu_ids = [0]
     crop_size = 512
