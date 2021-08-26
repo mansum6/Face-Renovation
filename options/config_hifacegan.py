@@ -57,8 +57,8 @@ class TrainOptions(object):
     netD_subarch = 'n_layer'
     netG = 'hifacegan'  # spade, lipspade
     ngf = 64  # set to 48 for Titan X 12GB card
-    niter = 30
-    niter_decay = 20
+    niter = 20
+    niter_decay = 11
     no_TTUR = False
     no_flip = False
     no_ganFeat_loss = False
