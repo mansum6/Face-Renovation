@@ -15,6 +15,19 @@ def get_down():
         ia.Resize({"height": 512, "width": 512}),
     ])
 
+# downscale then add noise or JPEG
+def get_down_Noise_JPEG():
+    return ia.Sequential([
+        # random downsample between 4x to 8x and get back
+        ia.Resize((0.125,0.25)),        
+        ia.OneOf([
+            ia.AdditiveGaussianNoise(scale=(20,40), per_channel=True),
+            ia.AdditiveLaplaceNoise(scale=(20,40), per_channel=True),
+            ia.AdditivePoissonNoise(lam=(15,30), per_channel=True),
+            ia.JpegCompression(compression=(50,85)),
+        ]),
+        ia.Resize({"height": 512, "width": 512}),
+    ])
 def get_noise():
     return ia.OneOf([
         ia.AdditiveGaussianNoise(scale=(20,40), per_channel=True),
@@ -42,6 +55,8 @@ def get_full():
 def get_by_suffix(suffix):
     if suffix == 'down':
         return get_down()
+    if suffix == 'down_noise':
+        return get_down_Noise_JPEG()
     # elif...
     else:
         raise('%s not supported' % suffix)
@@ -63,5 +78,5 @@ def create_mixed_dataset(input_dir, suffix='full'):
 
 if __name__ == '__main__':
     suffix = 'degradation_type' # [down/16x/noise/blur/jpeg/full]
-    source_dir = '/content/datasets/dataset_stylegan_512'
+    source_dir = ''
     create_mixed_dataset(source_dir, suffix)
