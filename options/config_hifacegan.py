@@ -1,7 +1,7 @@
 import sys
 
 class TrainOptions(object):
-    dataroot = '/content/datasets/dataset_stylegan_512_down'
+    dataroots = ['/content/datasets/dataset_stylegan_512_down',]
     dataroot_assist = ''
     name = 'HiFaceGan_Down'
     crop_size = 512
