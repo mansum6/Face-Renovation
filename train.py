@@ -82,5 +82,6 @@ try:
     print('Training was successfully finished.')
 except KeyboardInterrupt:
     # catch a KeyboardInterrupt and save the model and state to resume later
-    trainer.save('latest')
+    trainer.save(iter_counter.total_steps_so_far)
     trainer.save(epoch)
+    print("Saving models at interrupt")
