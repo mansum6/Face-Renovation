@@ -20,7 +20,7 @@ class MyDataset(BaseDataset):
 
     def initialize(self, opt):
         self.opt = opt
-       
+        files=[]
         for file_location in opt.dataroots:            
             files += [l for l in glob.glob(os.path.join(file_location, '*')) if l.lower().endswith(('jpg','png','jpeg'))]
         '''
