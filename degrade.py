@@ -18,8 +18,8 @@ def get_down():
 # downscale then add noise or JPEG
 def get_down_Noise_JPEG():
     return ia.Sequential([
-        # random downsample between 4x to 8x and get back
-        ia.Resize((0.125,0.25)),        
+        # random downsample between 0.2 to 0.3 and get back
+        ia.Resize((0.2,0.3)),        
         ia.OneOf([
             ia.AdditiveGaussianNoise(scale=(20,40), per_channel=True),
             ia.AdditiveLaplaceNoise(scale=(20,40), per_channel=True),
@@ -77,6 +77,6 @@ def create_mixed_dataset(input_dir, suffix='full'):
         cv2.imwrite(os.path.join(output_dir, item), img)
 
 if __name__ == '__main__':
-    suffix = 'degradation_type' # [down/16x/noise/blur/jpeg/full]
-    source_dir = ''
+    suffix = 'down' # [down/down_noise/16x/noise/blur/jpeg/full]
+    source_dir = '/content/datasets/all_Reg'
     create_mixed_dataset(source_dir, suffix)
