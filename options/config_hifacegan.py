@@ -1,9 +1,9 @@
 import sys
 
 class TrainOptions(object):
-    dataroots = ['/content/datasets/dataset_stylegan_512_down',]
+    dataroots = ['/content/datasets/all_Noise_down_noise','/content/datasets/all_Reg_down']
     dataroot_assist = ''
-    name = 'HiFaceGan_Down'
+    name = 'HiFaceGan_Down3'
     crop_size = 512
 
     gpu_ids = [0]  # set to [] for CPU-only training (not tested)
@@ -14,7 +14,7 @@ class TrainOptions(object):
 
     D_steps_per_G = 1
     aspect_ratio = 1.0
-    batchSize = 2
+    batchSize = 1
     beta1 = 0.0
     beta2 = 0.9
     cache_filelist_read = True
@@ -30,7 +30,7 @@ class TrainOptions(object):
     display_winsize = 256
     print_freq = 100
     save_epoch_freq = 1
-    save_latest_freq = 3000
+    save_latest_freq = 1500
 
     init_type = 'xavier'
     init_variance = 0.02
@@ -57,7 +57,7 @@ class TrainOptions(object):
     netD_subarch = 'n_layer'
     netG = 'hifacegan'  # spade, lipspade
     ngf = 64  # set to 48 for Titan X 12GB card
-    niter = 20
+    niter = 30
     niter_decay = 11
     no_TTUR = False
     no_flip = False
