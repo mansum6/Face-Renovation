@@ -21,7 +21,6 @@ class BaseNetwork(nn.Module):
         num_params = 0
         for param in self.parameters():
             num_params += param.numel()
-        print(self)
         print('Network [%s] was created. Total number of parameters: %.1f million. '
               % (type(self).__name__, num_params / 1000000))
 
