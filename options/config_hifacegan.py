@@ -3,7 +3,7 @@ import sys
 class TrainOptions(object):
     dataroots = ['/content/datasets/all_Noise_down_noise','/content/datasets/all_Reg_down']
     dataroot_assist = ''
-    name = 'HiFaceGan_Down3'
+    name = 'HiFaceGan_Down4'
     crop_size = 512
 
     gpu_ids = [0]  # set to [] for CPU-only training (not tested)
@@ -44,7 +44,7 @@ class TrainOptions(object):
     lambda_kld = 0.05
     lambda_vgg = 10.0
     load_from_opt_file = False
-    lr = 0.0002
+    lr = 0.0001
     max_dataset_size = sys.maxsize
     model = 'pix2pix'
     nThreads = 2
@@ -57,8 +57,8 @@ class TrainOptions(object):
     netD_subarch = 'n_layer'
     netG = 'hifacegan'  # spade, lipspade
     ngf = 64  # set to 48 for Titan X 12GB card
-    niter = 30
-    niter_decay = 11
+    niter = 12
+    niter_decay = 15
     no_TTUR = False
     no_flip = False
     no_ganFeat_loss = False
@@ -138,3 +138,4 @@ class TestOptions(object):
     serial_batches = True
     use_vae = False
     z_dim = 256
+
