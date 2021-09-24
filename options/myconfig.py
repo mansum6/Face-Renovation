@@ -44,7 +44,7 @@ class TrainOptions(object):
     lambda_kld = 0.05
     lambda_vgg = 10.0
     load_from_opt_file = False
-    lr = 0.00007
+    lr = 0.00004
     max_dataset_size = sys.maxsize
     model = 'pix2pix'
     nThreads = 2
