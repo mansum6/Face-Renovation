@@ -44,7 +44,7 @@ class TrainOptions(object):
     lambda_kld = 0.05
     lambda_vgg = 10.0
     load_from_opt_file = False
-    lr = 0.00004
+    lr = 0.00002
     max_dataset_size = sys.maxsize
     model = 'pix2pix'
     nThreads = 2
@@ -57,8 +57,8 @@ class TrainOptions(object):
     netD_subarch = 'n_layer'
     netG = 'hifacegan'  # spade, lipspade
     ngf = 64  # set to 48 for Titan X 12GB card
-    niter = 12
-    niter_decay = 15
+    niter = 60
+    niter_decay = 0
     no_TTUR = False
     no_flip = False
     no_ganFeat_loss = False
